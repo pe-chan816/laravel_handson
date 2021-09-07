@@ -4,3 +4,10 @@ services:
     build: ./containers/php-fpm
     volumes:
       - ./backend:/work
+  nginx:
+    build: ./containers/nginx
+    ports:
+      - 8080:80
+    volumes:
+      - ./backend:/work
+      - ./containers/nginx/laravel.conf:/etc/nginx/conf.d/laravel.conf
