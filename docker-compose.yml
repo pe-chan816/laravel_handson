@@ -3,5 +3,4 @@ services:
   php:
     build: ./containers/php-fpm
     volumes:
-      - ./bachend:/work
-      - ./containers/php-fpm/php.ini:/usr/local/etc/php/php.ini
+      - ./backend:/work
