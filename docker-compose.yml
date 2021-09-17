@@ -11,3 +11,10 @@ services:
     volumes:
       - ./backend:/work
       - ./containers/nginx/laravel.conf:/etc/nginx/conf.d/laravel.conf
+  db:
+    build: ./containers/mysql
+    volumes:
+      - DB-store:/var/lib/mysql
+
+volumes:
+  DB-store:
