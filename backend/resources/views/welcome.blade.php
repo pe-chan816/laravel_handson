@@ -7,7 +7,6 @@
     <p>my name is yuki!</p>
     <p>how are you?</p>
     <p>111111111</p>
-    <p>35353553535</p>
     <p>{{$value}}</p>
   </body>
 </html>
