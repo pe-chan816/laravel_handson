@@ -2,17 +2,23 @@ version: "3.8"
 services:
   php:
     build: ./containers/php-fpm
+    environment:
+      TZ: Asia/Tokyo
     volumes:
       - ./backend:/work
   nginx:
     build: ./containers/nginx
     ports:
       - 8080:80
+    environment:
+      TZ: Asia/Tokyo
     volumes:
       - ./backend:/work
       - ./containers/nginx/laravel.conf:/etc/nginx/conf.d/laravel.conf
   db:
     build: ./containers/mysql
+    environment:
+      TZ: Asia/Tokyo
     volumes:
       - DB-store:/var/lib/mysql
 
