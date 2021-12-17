@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\TaskController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,4 @@ Route::get('/', function () {
 });
 */
 Route::get('/',[TestController::class, 'func']);
+Route::get('/folders/{id}/tasks', [TaskController::class, 'index'])->name('tasks.index');
