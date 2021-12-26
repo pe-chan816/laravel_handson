@@ -24,5 +24,9 @@ Route::get('/', function () {
 Route::get('/',[TestController::class, 'func']);
 
 Route::get('/folders/{id}/tasks', [TaskController::class, 'index'])->name('tasks.index');
+
 Route::get('/folders/create', [FolderController::class, 'show'])->name('folders.create');
 Route::post('/folders/create', [FolderController::class, 'create']);
+
+Route::get('/folders/{id}/tasks/create', [FolderController::class, 'show'])->name('tasks.create');
+Route::post('/folders/{id}/tasks/create', [FolderController::class, 'create']);
