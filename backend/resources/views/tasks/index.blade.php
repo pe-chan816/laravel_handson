@@ -21,7 +21,7 @@
         <nav class="panel panel-default">
           <div class="panel-heading">フォルダ</div>
           <div class="panel-body">
-            <a class="btn btn-default btn-block" href="#">
+            <a class="btn btn-default btn-block" href="{{ route('folders.create') }}">
               フォルダを追加する
             </a>
           </div>
