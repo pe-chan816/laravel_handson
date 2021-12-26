@@ -21,7 +21,9 @@
   </main>
 
   <footer>
-    @yield('script')
   </footer>
+
+  @yield('script')
+
 </body>
 <html>

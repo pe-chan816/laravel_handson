@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Folder;
 use App\Models\Task;
+use App\Http\Requests\CreateTask;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
@@ -18,7 +19,6 @@ class TaskController extends Controller
 
     // 選ばれた Folder に紐づく Task を取得する
     $tasks = $current_folder->tasks()->get();
-    //$tasks = Task::where('folder_id', $current_folder->id)->get();
 
     return view('tasks/index',[
       'folders' => $folders,
@@ -31,6 +31,21 @@ class TaskController extends Controller
   {
     return view('tasks/create', [
       'folder_id' => $id
+    ]);
+  }
+
+  public function create(int $id, CreateTask $request)
+  {
+    $current_folder = Folder::find($id);
+
+    $task = new Task();
+    $task->title = $request->titile;
+    $task->due_date = $request->due_date;
+
+    $current_folder->tasks()->save($task);
+
+    return redirect()->route('tasks.index', [
+      'id' => $current_folder->id
     ]);
   }
 }
