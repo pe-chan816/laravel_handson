@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\FolderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +22,7 @@ Route::get('/', function () {
 });
 */
 Route::get('/',[TestController::class, 'func']);
+
 Route::get('/folders/{id}/tasks', [TaskController::class, 'index'])->name('tasks.index');
+Route::get('/folders/create', [FolderController::class, 'show'])->name('folders.create');
+Route::post('/folders/create', [FolderController::class, 'create']);
