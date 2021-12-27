@@ -39,7 +39,7 @@ class TaskController extends Controller
     $current_folder = Folder::find($id);
 
     $task = new Task();
-    $task->title = $request->titile;
+    $task->title = $request->title;
     $task->due_date = $request->due_date;
 
     $current_folder->tasks()->save($task);
