@@ -1,4 +1,4 @@
-@extends('html')
+@extends('share.html')
 
 @section('main')
   <div class="container">
