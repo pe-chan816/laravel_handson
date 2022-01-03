@@ -9,7 +9,7 @@ class TestController extends Controller
 {
   public function func(){
     $test = new Test;
-    $value = $test->find(1)->title;
+    $value = $test->find(1)->name;
 
     return view('welcome', compact('value'));
   }
